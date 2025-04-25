@@ -36,28 +36,27 @@ This tool deletes data. Use responsibly. No warranties for any data loss.
 ```bash
 git clone https://github.com/SKumladze/AWS-S3-Cleaner.git
 cd s3-cleaner
-
-
+```
 
 Create a virtual environment (recommended)
-
 ```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
 Install dependencies
-
 ```bash
 pip install -r requirements.txt
-
+```
 
 🧑‍💻 Usage
-
+```bash
 python cleaner.py <bucket-name> [OPTIONS]
+```
 
 ✅ Options
 
-Option	Description
+Option	    Description
 
 --versions	Delete old object versions
 --uploads	Delete incomplete multipart uploads
@@ -65,16 +64,14 @@ Option	Description
 
 
 📌 Examples
-
 ```bash
-
 python cleaner.py my-bucket --versions --uploads --days 45
 python cleaner.py my-bucket --uploads --days 7
 python cleaner.py my-bucket --versions --days 60
+```
 
-
+Required AWS IAM Permissions
 ```json
-
 {
   "Effect": "Allow",
   "Action": [
@@ -89,9 +86,10 @@ python cleaner.py my-bucket --versions --days 60
     "arn:aws:s3:::your-bucket-name/*"
   ]
 }
-
+```
 
 🧠 Pro Tips
+
 🧪 Start with a low --days value (like 1 or 2) to test without risk.
 
 🔁 Schedule it with cron, AWS Lambda, or CI/CD to keep S3 clean over time.
