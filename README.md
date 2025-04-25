@@ -57,11 +57,11 @@ python cleaner.py <bucket-name> [OPTIONS]
 ✅ Options
 
 Option	    Description
-
+```bash
 --versions	Delete old object versions
 --uploads	Delete incomplete multipart uploads
 --days N	Only delete items older than N days (default: 30)
-
+```
 
 📌 Examples
 ```bash
